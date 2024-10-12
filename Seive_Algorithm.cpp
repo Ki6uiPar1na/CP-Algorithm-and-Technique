@@ -17,7 +17,7 @@ void solve() {
     int n; cin >> n;
     vector<bool> prime(n + 1, 1); //space = O(n)
     prime[0] = prime[1] = 0;
-
+    
     for(int i = 2; i * i <= n; i++){ //time = O(logN)
         if(prime[i]){
             for(int j = i * i; j <= n; j += i){ //time = O(logN)
