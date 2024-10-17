@@ -15,16 +15,21 @@ using namespace std;
 void solve() {
 
     int n; cin >> n;
+
     vector<bool> prime(n + 1, 1); //space = O(n)
+
     prime[0] = prime[1] = 0;
-    
-    for(int i = 2; i * i <= n; i++){ //time = O(logN)
+
+
+    for(int i = 2; i * i <= n; i++){
         if(prime[i]){
-            for(int j = i * i; j <= n; j += i){ //time = O(logN)
+            for(int j = i * i; j <= n; j += i){ //time = O(logN)    
                 prime[j] = 0;
             }
         }
     }
+
+
     for(int i = 2; i <= n; i++){
         if(prime[i]){
             cout << i << ' ';
@@ -43,3 +48,5 @@ int32_t main() {
 
     return 0;
 }
+
+

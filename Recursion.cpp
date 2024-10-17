@@ -56,14 +56,19 @@ void checkStringPalindrome(string s, int l, int r){
         cout << "Not a palindrome\n";
         return;
     }
-    
     checkStringPalindrome(s, l + 1, r - 1);
 }
 
+int fibonacchi(int n){
+    if(n <= 1) return n;
+    return fibonacchi(n - 1) + fibonacchi(n - 2);
+}
+
+
 
 void solve() {
-    string s; cin >> s;
-    checkStringPalindrome(s, 0, s.size() - 1);
+    int val = fibonacchi(4);
+    cout << val << endl;
 }
 
 int32_t main() {
